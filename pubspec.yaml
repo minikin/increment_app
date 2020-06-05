@@ -1,5 +1,5 @@
 name: increment_app
-description: A new Flutter project.
+description: Cross Platform Mobile Client for Increment magazine.
 version: 0.0.0+1
 
 environment:
