@@ -1,3 +1,3 @@
 # Increment App
 
-Cross Platform Mobile Client for Increment magazine
+Cross Platform Mobile Client for Increment magazine.
