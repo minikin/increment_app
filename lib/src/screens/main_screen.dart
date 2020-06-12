@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:increment_app/src/utils/responsive_safe_area.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 class MainScreen extends StatefulWidget {
@@ -17,12 +18,21 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Builder(
-        builder: (context) {
+      body: ResponsiveSafeArea(
+        builder: (context, size) {
           return WebView(
+            javascriptMode: JavascriptMode.unrestricted,
+            gestureNavigationEnabled: true,
             initialUrl: 'https://increment.com/',
             onWebViewCreated: (webViewController) {
               _controller.complete(webViewController);
+            },
+            onPageStarted: (url) {
+              print('Page started loading: $url');
+              return CircularProgressIndicator();
+            },
+            onPageFinished: (String url) {
+              print('Page finished loading: $url');
             },
           );
         },
