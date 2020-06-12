@@ -18,25 +18,20 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ResponsiveSafeArea(
-        builder: (context, size) {
-          return WebView(
-            javascriptMode: JavascriptMode.unrestricted,
-            gestureNavigationEnabled: true,
-            initialUrl: 'https://increment.com/',
-            onWebViewCreated: (webViewController) {
-              _controller.complete(webViewController);
-            },
-            onPageStarted: (url) {
-              print('Page started loading: $url');
-              return CircularProgressIndicator();
-            },
-            onPageFinished: (String url) {
-              print('Page finished loading: $url');
-            },
-          );
-        },
+      appBar: AppBar(
+        title: Text('Increment'),
       ),
+      body: ResponsiveSafeArea(builder: (context, size) {
+        return WebView(
+          javascriptMode: JavascriptMode.unrestricted,
+          gestureNavigationEnabled: true,
+          initialUrl: 'https://increment.com/',
+          onWebViewCreated: (webViewController) {
+            print(_controller.isCompleted);
+            _controller.complete(webViewController);
+          },
+        );
+      }),
     );
   }
 }
