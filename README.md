@@ -59,6 +59,6 @@ If you have any questions ping me on twitter: [@minikin](https://twitter.com/min
 
 ## License
 
-The source code of Audio Player project is available under the MIT license.
-See the [LICENSE](https://github.com/minikin/audio_player_flutter/blob/develop/LICENSE) file for more info.
+The source code of Increment App project is available under the MIT license.
+See the [LICENSE]() file for more info.
 
